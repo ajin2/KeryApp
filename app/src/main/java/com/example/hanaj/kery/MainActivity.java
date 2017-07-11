@@ -99,13 +99,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
 
-        bluetoothBtn.setOnClickListener(new Button.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, BluetoothActivity.class);
-                startActivity(intent);
-            }
-        });
     }
 
     @Override
