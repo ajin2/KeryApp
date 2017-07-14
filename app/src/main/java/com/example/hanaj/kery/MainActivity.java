@@ -16,7 +16,10 @@ import com.example.hanaj.kery.gPS.GPSActivity;
 import com.example.hanaj.kery.option.OptionActivity;
 import com.example.hanaj.kery.weight.WeightActivity;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity {
+
+    private final long FINISH_INTERVAL_TIME = 2000;         // 2초
+    private long backPressedTime = 0;                       // 2초 측정하기 위한 변수
 
     // Debugging
     private static final String TAG = "Main";
@@ -48,8 +51,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button gpsBtn = (Button)findViewById(R.id.gpsBtn);
         Button weightBth = (Button)findViewById(R.id.weightBtn);
         Button optionBth = (Button)findViewById(R.id.optionBtn);
-
-        bluetoothBtn.setOnClickListener(this);
 
         // BluetoothService 클래스 생성
         if (btService == null) {
@@ -90,7 +91,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
 
-
         optionBth.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -99,17 +99,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
 
-    }
-
-    @Override
-    public void onClick(View v) {
-        if(btService.getDeviceState()) {
-            // 블루투스가 지원 가능한 기기일 때
-            btService.enableBluetooth();
-        }
-        else {
-            finish();
-        }
+        bluetoothBtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                if(btService.getDeviceState()) {
+                    // 블루투스가 지원 가능한 기기일 때
+                    btService.enableBluetooth();
+                }
+                else {
+                    finish();
+                }
+            }
+        });
     }
 
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -132,6 +133,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     Log.d(TAG, "Bluetooth is not enabled");
                 }
                 break;
+        }
+    }
+
+    public void onBackPressed() {
+        long tempTime = System.currentTimeMillis();
+        long intervalTime = tempTime - backPressedTime;
+
+        if(0 <= intervalTime && FINISH_INTERVAL_TIME >= intervalTime) {
+            super.onBackPressed();
+        } else {
+            backPressedTime = tempTime;
+            Toast.makeText(getApplicationContext(), "한번 더 뒤로가기 누르면 꺼집니다.",
+                    Toast.LENGTH_SHORT).show();
         }
     }
 }
