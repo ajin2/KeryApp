@@ -119,27 +119,6 @@ public class MainActivity extends AppCompatActivity implements BeaconConsumer {
                 distanceCalculator.calculate();
                 sendMessage(distanceCalculator.getDirection());
             }
-/*
-            @Override
-            //비콘이 감지되면 해당 함수가 호출됨. Collection<Beacon> beacons에는 감지된 비콘의 리스트가
-            //region에는 비콘들에 대응하는 Region객체가 들어옴
-            public void didRangeBeaconsInRegion(Collection<Beacon> beacons, Region region) {
-                for (Beacon beacon : beacons) {
-                    //비콘 모듈의 이름이 일시적으로 바뀌지 않아 맥어드레스로 대체
-                    String address = beacon.getBluetoothAddress();
-                    Double distance = beacon.getDistance();
-                    if (address.equals(beaconInfo.getBEACON_LEFT_ADDRESS()))
-                        beaconInfo.setLeft_distance((int) (distance * 100));
-                    else if (address.equals(beaconInfo.getBEACON_CENTER_ADDRESS()))
-                        beaconInfo.setCenter_distance((int) (distance * 100));
-                    else if (address.equals(beaconInfo.getBEACON_RIGHT_ADDRESS()))
-                        beaconInfo.setRight_distance((int) (distance * 100));
-                }
-                Log.d("distances", "Left->" + beaconInfo.getLeft_distance() + " " + "Center->" + beaconInfo.getCenter_distance() + " " + "Right->" + beaconInfo.getRight_distance());
-                distanceCalculator.calculate();
-                sendMessage(distanceCalculator.getDirection());
-            }*/
-
         });
         try {
 
@@ -175,7 +154,6 @@ public class MainActivity extends AppCompatActivity implements BeaconConsumer {
 
             // Reset out string buffer to zero and clear the edit text field
             mOutStringBuffer.setLength(0) ;
-
         }
 
         mSendingState = STATE_NO_SENDING ;
