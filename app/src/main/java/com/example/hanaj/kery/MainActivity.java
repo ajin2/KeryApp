@@ -127,7 +127,7 @@ public class MainActivity extends AppCompatActivity implements BeaconConsumer {
     }
 
     /*메시지를 보낼 메소드 정의*/
-    public synchronized void sendMessage( String message) {
+    public synchronized void sendMessage(String message) {
 
         if ( mSendingState == STATE_SENDING ) {
             try {
@@ -138,7 +138,7 @@ public class MainActivity extends AppCompatActivity implements BeaconConsumer {
         }
 
         mSendingState = STATE_SENDING ;
-        Log.d("DRIVEAC","state=>"+btService.getState());
+        Log.d("DRIVEAC","state=>" + btService.getState());
         // Check that we're actually connected before trying anything
         if ( btService.getState() != BluetoothService.STATE_CONNECTED ) {
             mSendingState = STATE_NO_SENDING ;
