@@ -359,9 +359,7 @@ public class BluetoothService {
         public synchronized void write( byte[] buffer) {
             try {
                 mmOutStream.write(buffer) ;
-                Log.d(TAG,"sendMEssage_success");
-
-
+                Log.d(TAG,"sendMessage_success");
             } catch (IOException e) {
                 Log.e(TAG, "Exception during write", e);
             }

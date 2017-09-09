@@ -2,6 +2,7 @@ package com.example.hanaj.kery.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,7 +29,6 @@ public class DriveFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     @Override
@@ -41,14 +41,12 @@ public class DriveFragment extends Fragment {
         drive_btn.setBackgroundResource(R.drawable.driving_off);
         drive_btn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-
                 if (drive_Btn_state == 1)//주행중일때
                 {
                     ((MainActivity)getActivity()).stopBeacon();
                     ((MainActivity)getActivity()).sendMessage("0");
                     drive_Btn_state = 0;
                     drive_btn.setBackgroundResource(R.drawable.driving_off);
-
                 } else //주행중이 아닐때
                 {
                     ((MainActivity)getActivity()).startBeacon();
@@ -56,7 +54,6 @@ public class DriveFragment extends Fragment {
                     drive_btn.setBackgroundResource(R.drawable.driving_on);
                     drive_Btn_state = 1;
                 }
-
             }
         });
 
@@ -64,28 +61,22 @@ public class DriveFragment extends Fragment {
         lock_btn.setBackgroundResource(R.drawable.lock_off);
         lock_btn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-
+                Log.d("onClick before if", "111111111111111111111111111111111");
                 if (lock_Btn_state == 1)//잠금장치가 잠겨있을때
                 {
-                    ((MainActivity)getActivity()).stopBeacon();
-                    ((MainActivity)getActivity()).sendMessage("2");
                     lock_Btn_state = 0;
+                    ((MainActivity)getActivity()).sendMessage("2");
                     lock_btn.setBackgroundResource(R.drawable.lock_off);
-
+                    Log.d("잠금 -> 풀림", "22222222222222222222222222222222222");
                 } else //잠금장치가 안잠겨있을때
                 {
-                    ((MainActivity)getActivity()).startBeacon();
+                    lock_Btn_state = 1;
                     ((MainActivity)getActivity()).sendMessage("3");
                     lock_btn.setBackgroundResource(R.drawable.lock_on);
-                    lock_Btn_state = 1;
+                    Log.d("풀림 -> 잠금", "33333333333333333333333333333333333333");
                 }
-
             }
         });
-
-
         return view;
     }
-
-
 }
