@@ -37,9 +37,6 @@ public class IntroActivity extends Activity {
     //permissions
     private static final int MY_PERMISSIONS_REQUEST_LOCATION=1;
 
-
-
-
     // Member object for the chat services
     private BluetoothService btService = null;
     private StringBuffer mOutStringBuffer;
