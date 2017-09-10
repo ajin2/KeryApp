@@ -23,7 +23,7 @@ import org.altbeacon.beacon.Region;
 
 import java.util.Collection;
 
-public class MainActivity extends AppCompatActivity implements BeaconConsumer {
+public class MainActivity extends AppCompatActivity implements BeaconConsumer{
 
     //아두이노 받은 값을 받는 변수
     public static String values="0";
@@ -75,6 +75,7 @@ public class MainActivity extends AppCompatActivity implements BeaconConsumer {
             mOutStringBuffer= new StringBuffer("");
             Log.d("btservicestate", "state->" + btService.getState());
         }
+
         //비콘매니저 객체를 초기화
         beaconManager = BeaconManager.getInstanceForApplication(this);
         distanceCalculator = new DistanceCalculator();
@@ -83,6 +84,7 @@ public class MainActivity extends AppCompatActivity implements BeaconConsumer {
         //기기에 따라 setBeaconLayout안의 내용을 바꿔줘야 하는듯 함.
         beaconManager.getBeaconParsers().add(new BeaconParser().setBeaconLayout("m:2-3=0215,i:4-19,i:20-21,i:22-23,p:24-24,d:25-25"));
         //비콘 탐지 시작 및 아두이노에 신호 송신
+
 
     }
 
@@ -94,7 +96,6 @@ public class MainActivity extends AppCompatActivity implements BeaconConsumer {
     }
     //비콘 탐색 종료
     public void stopBeacon(){
-
         beaconManager.unbind(this);
     }
     @Override
@@ -121,7 +122,6 @@ public class MainActivity extends AppCompatActivity implements BeaconConsumer {
             }
         });
         try {
-
             beaconManager.startRangingBeaconsInRegion(new Region("MyRangingUniqueId",null,null,null));
         } catch (RemoteException e){ }
     }

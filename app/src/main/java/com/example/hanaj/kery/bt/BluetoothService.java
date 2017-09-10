@@ -37,6 +37,8 @@ public class BluetoothService {
     private static ConnectThread mConnectThread;
     private static ConnectedThread mConnectedThread;
 
+    private BluetoothService btService = null;
+
     // Debugging
     private static final String TAG = "BluetoothChatService";
 
@@ -288,12 +290,10 @@ public class BluetoothService {
         }
     }
 
-
     private class ConnectedThread extends Thread {
         private final BluetoothSocket mmSocket;
         private final InputStream mmInStream;
         private final OutputStream mmOutStream;
-
 
         public ConnectedThread(BluetoothSocket socket) {
             Log.d(TAG, "create ConnectedThread");
@@ -345,6 +345,7 @@ public class BluetoothService {
                     }
                 } catch (IOException e) {
                     Log.e(TAG, "disconnected", e);
+                    btService.scanDevice();
                     connectionLost();
                     break;
                 }
@@ -365,7 +366,6 @@ public class BluetoothService {
             }
         }
 
-
         public void cancel() {
             try {
                 mmSocket.close();
@@ -373,8 +373,6 @@ public class BluetoothService {
                 Log.e(TAG, "close() of connect socket failed", e);
             }
         }
-
-
     }
 
     /* write() : 값을 쓰는 부분(보내는 부분) */
@@ -386,8 +384,6 @@ public class BluetoothService {
             r = mConnectedThread;
             Log.d(TAG,"out->"+out.toString());
         }
-
-
         r.write(out);
     }
     /*read 값을 읽는 쓰레드 부분*/
