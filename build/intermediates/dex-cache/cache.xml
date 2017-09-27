@@ -3,147 +3,21 @@
 
     <item
         is-multidex="true"
-        jar="C:\Users\hanaj\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\26.0.0-alpha1\support-annotations-26.0.0-alpha1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="023ee503b631f69511e335a061ea008f8da60f40">
-        <dex dex="C:\Users\hanaj\A.S.P\KERY\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-26.0.0-alpha1_05e841ff175acc05ba788e13a36138545aa28cae\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\hanaj\A.S.P\KERY\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="421e9c5a5f87335d7442b5f782feb1489cc182eb">
-        <dex dex="C:\Users\hanaj\A.S.P\KERY\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_49c449d588f85445e6c4b96ee4ca6589471feea2\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\hanaj\.android\build-cache\61f561f16c04202a21cfa561a829d77da7869061\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="16f844ac918f5b50050fd8f637fa1463e2099fb0">
-        <dex dex="C:\Users\hanaj\A.S.P\KERY\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_b9dedbe9fe96cf399023d73e08eccb69bcc89b50\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\hanaj\.android\build-cache\5589374b703364fad11d1dadc966b85f1883a20d\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="952944218ecedea1554a513dec0c14d570642843">
-        <dex dex="C:\Users\hanaj\A.S.P\KERY\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_14cc927d574706f61cf71bbad05840380bd6e6e4\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\hanaj\.android\build-cache\10ec54f4385580f512e1b3802282688d6a5b5565\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="8df0e365e40beb151bc42dee20817721a6cab7b0">
-        <dex dex="C:\Users\hanaj\A.S.P\KERY\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_3b7b694f11752890ef01281bbfe00b4b77d12cd5\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\hanaj\A.S.P\KERY\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jar="C:\Users\Home\Documents\KeryApp\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
         sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
-        <dex dex="C:\Users\hanaj\A.S.P\KERY\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_f7bb53b742e2f52e9e459d53ab890570207bbdd1\classes.dex" />
+        <dex dex="C:\Users\Home\Documents\KeryApp\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_8e2c8ccdb84ab5e71eb3b8c918b3d9257283e3d7\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\hanaj\.android\build-cache\e336827aa0229d0de4686cbb7d8707588ca7a6fa\output\jars\classes.jar"
+        jar="C:\Users\Home\Documents\KeryApp\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="47471eb19df288158b00b8d9cfa41bce7373f5cc">
-        <dex dex="C:\Users\hanaj\A.S.P\KERY\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_dc425ee317f5fb091104b9821cc9e421cb0ca167\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\hanaj\.android\build-cache\7649510312550030258a4be3b751363934cf1e10\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="88246166d5afb106f532f6e6deae683c66b42c89">
-        <dex dex="C:\Users\hanaj\A.S.P\KERY\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_2dc8f79721b4044575273eaa661968d0370cf7b3\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\hanaj\.android\build-cache\0ed370188769b2def9542ceeea77ab7eb9bd5411\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="6a022bf00ccd0948a8180c505e8e458bbddd43a6">
-        <dex dex="C:\Users\hanaj\A.S.P\KERY\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_dbac844fbc32afb1eaf50c870abea894b0d71ddc\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\hanaj\.android\build-cache\87cb2111e9ecb83df06544cf00a0b67500985c0c\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="cddcd0fb93bc70e27325f2f715b2710332004ebb">
-        <dex dex="C:\Users\hanaj\A.S.P\KERY\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_accf48c7f7d4208431710b75f5ca5aaebdb14d64\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\hanaj\.android\build-cache\b4d941ba7625c894cb8cc53b33cadbd06e4dcbde\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="2e92aa0163544a804a0b34f169ca61801770839a">
-        <dex dex="C:\Users\hanaj\A.S.P\KERY\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_045229836f72f0aecf204d4be3749fa88f34ee51\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\hanaj\.android\build-cache\720a5da1abf9fbd4f9cbeda2651c1655e7b71e4a\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="c4f45092eee6cdf1a5dbd597b2b6819be652ce2e">
-        <dex dex="C:\Users\hanaj\A.S.P\KERY\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_1b0a1619d7b1731342d419ccf35a28e14d72ecee\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\hanaj\.android\build-cache\8348d58aedf876ebab704a68ce8b0d22b548ffb1\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="18d31838aa4fcc768a8a0516e22cc13b94655d89">
-        <dex dex="C:\Users\hanaj\A.S.P\KERY\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_cfb18c1ef6a3e50e5c20aa3aac46d12066296e97\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\hanaj\.android\build-cache\83d2b0feac82390f3e513d72896fa0212f3a0fd6\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="fcd01fd11233459f546c437ec927e9b61bf7caf1">
-        <dex dex="C:\Users\hanaj\A.S.P\KERY\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_03e587c78e7de783dc53c81597be7aaa491fbd0f\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\hanaj\.android\build-cache\6586b8eca25e0d4f6893717f593e02553d40ccec\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="9935891f23923f39d002087085d9696568a9f657">
-        <dex dex="C:\Users\hanaj\A.S.P\KERY\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_ab6516c305e8607db32a794a1e6aaa87e0b2d260\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\hanaj\.android\build-cache\28bedfaaa2454a905794b5d84f1139370bb120bc\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="C:\Users\hanaj\A.S.P\KERY\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_07e2c98e114aa2d3b77538160b7b0b2a6f3bf3a0\classes.dex" />
+        sha1="123fe0855c6ddfeabc3c53d123b33f735da9b83e">
+        <dex dex="C:\Users\Home\Documents\KeryApp\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_53f18b2c7f7b0d2134b1a5b4c0eff01369974d5c\classes.dex" />
     </item>
 
 </items>

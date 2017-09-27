@@ -36,7 +36,6 @@ public class DriveFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
        View view=inflater.inflate(R.layout.fragment_drive, container, false);
-
         drive_btn = (Button) view.findViewById(R.id.btn_drive);
         drive_btn.setBackgroundResource(R.drawable.driving_off);
         drive_btn.setOnClickListener(new View.OnClickListener() {

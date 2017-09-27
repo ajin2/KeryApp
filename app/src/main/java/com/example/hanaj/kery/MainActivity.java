@@ -1,17 +1,22 @@
 package com.example.hanaj.kery;
 
+import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.os.RemoteException;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Window;
 
 import com.example.hanaj.kery.beacon.BeaconInfo;
 import com.example.hanaj.kery.beacon.DistanceCalculator;
 import com.example.hanaj.kery.bt.BluetoothService;
+import com.example.hanaj.kery.fragment.GpsFragment;
 import com.example.hanaj.kery.pagerAdapter.PagerAdapter;
 
 import org.altbeacon.beacon.Beacon;
@@ -23,15 +28,21 @@ import org.altbeacon.beacon.Region;
 
 import java.util.Collection;
 
-public class MainActivity extends AppCompatActivity implements BeaconConsumer{
+import static android.R.attr.delay;
+
+public class
+MainActivity extends AppCompatActivity implements BeaconConsumer{
 
     //아두이노 받은 값을 받는 변수
-    public static String values="0";
+    public static String values="0,0";
     // synchronized flags
     private static final int STATE_SENDING = 1 ;
     private static final int STATE_NO_SENDING = 2 ;
     private int mSendingState ;
 
+    //위도 경도
+    public static String mLat="0";
+    public static String mLon="0";
     // Intent request codes
     private static final int REQUEST_CONNECT_DEVICE = 1;
     private static final int REQUEST_ENABLE_BT = 2;
@@ -67,6 +78,54 @@ public class MainActivity extends AppCompatActivity implements BeaconConsumer{
         mTab.getTabAt(0).setIcon(R.drawable.carrier);
         mTab.getTabAt(1).setIcon(R.drawable.weight);
         mTab.getTabAt(2).setIcon(R.drawable.gps);
+
+
+        // Set TabSelectedListener
+        mTab.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+
+                if (tab.getPosition() == 2) {
+                    sendMessage("5");
+                    Log.d("val2", MainActivity.values);
+                    if (values.equals("0,0")) {
+
+                    }
+                    else {
+                        int idx = MainActivity.values.indexOf(",");
+
+                        // @ 앞부분을 추출
+                        // substring은 첫번째 지정한 인덱스는 포함하지 않는다.
+                        // 아래의 경우는 첫번째 문자열인 a 부터 추출된다.
+                        mLat = MainActivity.values.substring(0, idx);
+
+                        //
+                        // 아래 substring은 @ 바로 뒷부분인 n부터 추출된다.
+                        mLon = MainActivity.values.substring(idx + 1);
+                    }
+
+                }
+                else if (tab.getPosition() == 1)
+                {
+                    MainActivity.values="0";
+                }
+
+            }
+
+
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
+
         //////////////////////////////////////////////////////////////
 
         //통신을 위한 블루투스  객체 설정
@@ -85,9 +144,9 @@ public class MainActivity extends AppCompatActivity implements BeaconConsumer{
         beaconManager.getBeaconParsers().add(new BeaconParser().setBeaconLayout("m:2-3=0215,i:4-19,i:20-21,i:22-23,p:24-24,d:25-25"));
         //비콘 탐지 시작 및 아두이노에 신호 송신
 
+        sendMessage("5");
 
     }
-
     //비콘 탐색 시작
     public void startBeacon(){
         beaconManager.setForegroundScanPeriod(100l);
@@ -129,34 +188,34 @@ public class MainActivity extends AppCompatActivity implements BeaconConsumer{
     /*메시지를 보낼 메소드 정의*/
     public synchronized void sendMessage(String message) {
 
-        if ( mSendingState == STATE_SENDING ) {
+        if (mSendingState == STATE_SENDING) {
             try {
-                wait() ;
+                wait();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
 
-        mSendingState = STATE_SENDING ;
-        Log.d("DRIVEAC","state=>" + btService.getState());
+        mSendingState = STATE_SENDING;
+        Log.d("DRIVEAC", "state=>" + btService.getState());
         // Check that we're actually connected before trying anything
-        if ( btService.getState() != BluetoothService.STATE_CONNECTED ) {
-            mSendingState = STATE_NO_SENDING ;
-            return ;
+        if (btService.getState() != BluetoothService.STATE_CONNECTED) {
+            mSendingState = STATE_NO_SENDING;
+            return;
         }
 
         // Check that there's actually something to send
-        if ( message.length() > 0 ) {
+        if (message.length() > 0) {
             // Get the message bytes and tell the BluetoothChatService to write
-            Log.d("DRIVE", "send->"+message);
-            byte[] send = message.getBytes() ;
+            Log.d("DRIVE", "send->" + message);
+            byte[] send = message.getBytes();
             btService.write(send);
 
             // Reset out string buffer to zero and clear the edit text field
-            mOutStringBuffer.setLength(0) ;
+            mOutStringBuffer.setLength(0);
         }
 
-        mSendingState = STATE_NO_SENDING ;
-        notify() ;
+        mSendingState = STATE_NO_SENDING;
+        notify();
     }
 }
