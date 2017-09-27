@@ -1,7 +1,15 @@
 package com.example.hanaj.kery;
 
+
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
+import android.bluetooth.BluetoothAdapter;
+import android.bluetooth.BluetoothDevice;
+import android.bluetooth.BluetoothManager;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -12,6 +20,8 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Window;
+import android.widget.ImageView;
+
 
 import com.example.hanaj.kery.beacon.BeaconInfo;
 import com.example.hanaj.kery.beacon.DistanceCalculator;
@@ -33,6 +43,7 @@ import static android.R.attr.delay;
 public class
 MainActivity extends AppCompatActivity implements BeaconConsumer{
 
+    ImageView bt_status;
     //아두이노 받은 값을 받는 변수
     public static String values="0,0";
     // synchronized flags
@@ -54,6 +65,7 @@ MainActivity extends AppCompatActivity implements BeaconConsumer{
     private BeaconManager beaconManager;
     private BeaconInfo beaconInfo;
     private DistanceCalculator distanceCalculator;
+
     private final Handler mHandler = new Handler() {
         //핸들러의 기능을 수행할 클래스(hamdleMessage)
         public void handleMessage(Message msg) {
@@ -65,13 +77,18 @@ MainActivity extends AppCompatActivity implements BeaconConsumer{
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_main);
+        bt_status= (ImageView)findViewById(R.id.bt_status);
+
+        // Register for broadcasts on BluetoothAdapter state change
+        IntentFilter filter = new IntentFilter(BluetoothAdapter.ACTION_STATE_CHANGED);
+        registerReceiver(mReceiver, filter);
+
         //fragment를 위한 설정들
         PagerAdapter mPagerAdapter = new PagerAdapter(
                 getSupportFragmentManager()
         );
         ViewPager mViewpager = (ViewPager) findViewById(R.id.viewpager);
         mViewpager.setAdapter(mPagerAdapter);
-
         TabLayout mTab=(TabLayout) findViewById(R.id.tabs);
         mTab.setupWithViewPager(mViewpager);
         mTab.setTabTextColors(getResources().getColorStateList(R.color.white));
@@ -149,8 +166,9 @@ MainActivity extends AppCompatActivity implements BeaconConsumer{
     }
     //비콘 탐색 시작
     public void startBeacon(){
-        beaconManager.setForegroundScanPeriod(100l);
-        beaconManager.setForegroundBetweenScanPeriod(100l);
+        //0.5초에 한번씩 탐색
+        beaconManager.setForegroundScanPeriod(501l);
+        beaconManager.setForegroundBetweenScanPeriod(0);
         beaconManager.bind(this);
     }
     //비콘 탐색 종료
@@ -168,22 +186,26 @@ MainActivity extends AppCompatActivity implements BeaconConsumer{
                     //비콘 모듈의 이름이 일시적으로 바뀌지 않아 맥어드레스로 대체
                     String address = beacon.getBluetoothAddress();
                     Double distance = beacon.getDistance();
-                    if (address.equals(beaconInfo.getBEACON_LEFT_ADDRESS()))
-                        beaconInfo.setLeft_distance((int) (distance * 100));
-                    else if (address.equals(beaconInfo.getBEACON_CENTER_ADDRESS()))
-                        beaconInfo.setCenter_distance((int) (distance * 100));
-                    else if (address.equals(beaconInfo.getBEACON_RIGHT_ADDRESS()))
-                        beaconInfo.setRight_distance((int) (distance * 100));
+
+                    if (address.equals(beaconInfo.BEACON_LEFT_ADDRESS))
+                        beaconInfo.setLeft_distance((int) (distance * 1000));
+                    else if (address.equals(beaconInfo.BEACON_CENTER_ADDRESS))
+                        beaconInfo.setCenter_distance((int) (distance * 1000));
+                    else if (address.equals(beaconInfo.BEACON_RIGHT_ADDRESS))
+                        beaconInfo.setRight_distance((int) (distance * 1000));
+                    distanceCalculator.calculate();
+                    sendMessage(distanceCalculator.getDirection());
+
                 }
-                Log.d("distances", "Left->" + beaconInfo.getLeft_distance() + " " + "Center->" + beaconInfo.getCenter_distance() + " " + "Right->" + beaconInfo.getRight_distance());
-                distanceCalculator.calculate();
-                sendMessage(distanceCalculator.getDirection());
+                //distanceCalculator.calculate();
+                //sendMessage(distanceCalculator.getDirection());
             }
         });
         try {
             beaconManager.startRangingBeaconsInRegion(new Region("MyRangingUniqueId",null,null,null));
         } catch (RemoteException e){ }
     }
+
 
     /*메시지를 보낼 메소드 정의*/
     public synchronized void sendMessage(String message) {
@@ -218,4 +240,59 @@ MainActivity extends AppCompatActivity implements BeaconConsumer{
         mSendingState = STATE_NO_SENDING;
         notify();
     }
+
+    private final BroadcastReceiver mReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            final String action = intent.getAction();
+            Log.d("btSTATE", "start");
+
+            switch(action){
+                case BluetoothDevice.ACTION_ACL_CONNECTED:
+                    bt_status.setImageResource(R.drawable.bluetooth_black_on);
+                    break;
+                case BluetoothDevice.ACTION_ACL_DISCONNECTED:
+                    bt_status.setImageResource(R.drawable.bluetooth_black_off);
+                    break;
+            }
+
+            /*if(BluetoothDevice.ACTION_ACL_CONNECTED.equals(action)){
+                bt_status.setImageResource(R.drawable.bluetooth_black_on);
+                Log.d("btSTATE", "on");
+
+            }else if(BluetoothDevice.ACTION_ACL_DISCONNECTED.equals(action)){
+                bt_status.setImageResource(R.drawable.bluetooth_black_off);
+                Log.d("btSTATE","off");
+
+            }*/
+
+            /*if (action.equals(BluetoothAdapter.ACTION_STATE_CHANGED)) {
+                final int state = intent.getIntExtra(BluetoothAdapter.EXTRA_STATE,
+                        BluetoothAdapter.ERROR);
+                switch (state) {
+                    case BluetoothAdapter.STATE_OFF:
+                        bt_status.setImageResource(R.drawable.bluetooth_black_off);
+                        Log.d("btSTATE","off");
+                        break;
+                    case BluetoothAdapter.STATE_TURNING_OFF:
+                        break;
+                    case BluetoothAdapter.STATE_ON:
+                        bt_status.setImageResource(R.drawable.bluetooth_black_on);
+                        Log.d("btSTATE", "on");
+                        break;
+                    case BluetoothAdapter.STATE_TURNING_ON:
+                        break;
+                }
+            }
+            */
+        }
+    };
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+
+       unregisterReceiver(mReceiver);
+    }
+
 }

@@ -397,4 +397,7 @@ public class BluetoothService {
     private void connectionLost() {
         setState(STATE_LISTEN);
     }
+
+
 }
+

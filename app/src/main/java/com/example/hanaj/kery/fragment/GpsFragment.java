@@ -53,6 +53,7 @@ public class GpsFragment extends Fragment implements OnMapReadyCallback {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         Log.d("val1",MainActivity.mLat+","+MainActivity.mLon);
 
         View view=inflater.inflate(R.layout.fragment_gps, container, false);;
@@ -68,6 +69,7 @@ public class GpsFragment extends Fragment implements OnMapReadyCallback {
         mMap = googleMap;
         // Add a marker in Sydney and move the camera
         //mMap.clear();
+
 
         LatLng kery = new LatLng(Float.valueOf(MainActivity.mLat),Float.valueOf(MainActivity.mLon));
         mMap.addMarker(new MarkerOptions().position(kery).title("My kery"));
