@@ -2,148 +2,130 @@
 <items version="2" >
 
     <item
-        is-multidex="true"
-        jar="C:\Users\hanaj\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\26.0.0-alpha1\support-annotations-26.0.0-alpha1.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="C:\Users\tnghk\.android\build-cache\aa291a7c5f1657311e8c7e49b92bc104ad09f464\output\jars\classes.jar"
+        jumboMode="false"
         optimize="true"
-        revision="25.0.0"
-        sha1="023ee503b631f69511e335a061ea008f8da60f40">
-        <dex dex="C:\Users\hanaj\A.S.P\KERY\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-26.0.0-alpha1_05e841ff175acc05ba788e13a36138545aa28cae\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\hanaj\A.S.P\KERY\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="421e9c5a5f87335d7442b5f782feb1489cc182eb">
-        <dex dex="C:\Users\hanaj\A.S.P\KERY\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_49c449d588f85445e6c4b96ee4ca6589471feea2\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\hanaj\.android\build-cache\61f561f16c04202a21cfa561a829d77da7869061\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="16f844ac918f5b50050fd8f637fa1463e2099fb0">
-        <dex dex="C:\Users\hanaj\A.S.P\KERY\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_b9dedbe9fe96cf399023d73e08eccb69bcc89b50\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\hanaj\.android\build-cache\5589374b703364fad11d1dadc966b85f1883a20d\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
+        revision="26.0.1"
         sha1="952944218ecedea1554a513dec0c14d570642843">
-        <dex dex="C:\Users\hanaj\A.S.P\KERY\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_14cc927d574706f61cf71bbad05840380bd6e6e4\classes.dex" />
+        <dex dex="C:\Users\tnghk\App\KeryApp\app\build\intermediates\pre-dexed\debug\classes_fc53fb4b977f348b20ca4eb3c82be001502a87a9.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="C:\Users\hanaj\.android\build-cache\10ec54f4385580f512e1b3802282688d6a5b5565\output\jars\classes.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="C:\Users\tnghk\.android\build-cache\c6ed09c240b99055b12f00514a9168d9e292d627\output\jars\classes.jar"
+        jumboMode="false"
         optimize="true"
-        revision="25.0.0"
-        sha1="8df0e365e40beb151bc42dee20817721a6cab7b0">
-        <dex dex="C:\Users\hanaj\A.S.P\KERY\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_3b7b694f11752890ef01281bbfe00b4b77d12cd5\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\hanaj\A.S.P\KERY\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
-        <dex dex="C:\Users\hanaj\A.S.P\KERY\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_f7bb53b742e2f52e9e459d53ab890570207bbdd1\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\hanaj\.android\build-cache\e336827aa0229d0de4686cbb7d8707588ca7a6fa\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="47471eb19df288158b00b8d9cfa41bce7373f5cc">
-        <dex dex="C:\Users\hanaj\A.S.P\KERY\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_dc425ee317f5fb091104b9821cc9e421cb0ca167\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\hanaj\.android\build-cache\7649510312550030258a4be3b751363934cf1e10\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="88246166d5afb106f532f6e6deae683c66b42c89">
-        <dex dex="C:\Users\hanaj\A.S.P\KERY\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_2dc8f79721b4044575273eaa661968d0370cf7b3\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\hanaj\.android\build-cache\0ed370188769b2def9542ceeea77ab7eb9bd5411\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="6a022bf00ccd0948a8180c505e8e458bbddd43a6">
-        <dex dex="C:\Users\hanaj\A.S.P\KERY\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_dbac844fbc32afb1eaf50c870abea894b0d71ddc\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\hanaj\.android\build-cache\87cb2111e9ecb83df06544cf00a0b67500985c0c\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="cddcd0fb93bc70e27325f2f715b2710332004ebb">
-        <dex dex="C:\Users\hanaj\A.S.P\KERY\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_accf48c7f7d4208431710b75f5ca5aaebdb14d64\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\hanaj\.android\build-cache\b4d941ba7625c894cb8cc53b33cadbd06e4dcbde\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="2e92aa0163544a804a0b34f169ca61801770839a">
-        <dex dex="C:\Users\hanaj\A.S.P\KERY\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_045229836f72f0aecf204d4be3749fa88f34ee51\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\hanaj\.android\build-cache\720a5da1abf9fbd4f9cbeda2651c1655e7b71e4a\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="c4f45092eee6cdf1a5dbd597b2b6819be652ce2e">
-        <dex dex="C:\Users\hanaj\A.S.P\KERY\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_1b0a1619d7b1731342d419ccf35a28e14d72ecee\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\hanaj\.android\build-cache\8348d58aedf876ebab704a68ce8b0d22b548ffb1\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="18d31838aa4fcc768a8a0516e22cc13b94655d89">
-        <dex dex="C:\Users\hanaj\A.S.P\KERY\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_cfb18c1ef6a3e50e5c20aa3aac46d12066296e97\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\hanaj\.android\build-cache\83d2b0feac82390f3e513d72896fa0212f3a0fd6\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
+        revision="26.0.1"
         sha1="fcd01fd11233459f546c437ec927e9b61bf7caf1">
-        <dex dex="C:\Users\hanaj\A.S.P\KERY\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_03e587c78e7de783dc53c81597be7aaa491fbd0f\classes.dex" />
+        <dex dex="C:\Users\tnghk\App\KeryApp\app\build\intermediates\pre-dexed\debug\classes_cbec638c452b36e840f94aa7ef65ebdf4661bf4b.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="C:\Users\hanaj\.android\build-cache\6586b8eca25e0d4f6893717f593e02553d40ccec\output\jars\classes.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="C:\Users\tnghk\.android\build-cache\d68945b907e5262af3cfc6d896f91961edc70e8a\output\jars\classes.jar"
+        jumboMode="false"
         optimize="true"
-        revision="25.0.0"
+        revision="26.0.1"
+        sha1="47471eb19df288158b00b8d9cfa41bce7373f5cc">
+        <dex dex="C:\Users\tnghk\App\KeryApp\app\build\intermediates\pre-dexed\debug\classes_66dd1cac856de75b353ff22f830ea226011066e3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\tnghk\.android\build-cache\f5476bd8744867a7b2f1b36729963c269a246e88\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="18d31838aa4fcc768a8a0516e22cc13b94655d89">
+        <dex dex="C:\Users\tnghk\App\KeryApp\app\build\intermediates\pre-dexed\debug\classes_c405d3a9cc3b105f97c7c19726efc9a61637e7d4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\tnghk\.android\build-cache\66b129c381ab93f574b91f3eae7147d55dbf70e3\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="6a022bf00ccd0948a8180c505e8e458bbddd43a6">
+        <dex dex="C:\Users\tnghk\App\KeryApp\app\build\intermediates\pre-dexed\debug\classes_0ce32f73a9a24c5e734cc60c8ee61555fc521df3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\tnghk\.android\build-cache\537aa9b4cb659debe8f76d75dec9324d9035e181\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
         sha1="9935891f23923f39d002087085d9696568a9f657">
-        <dex dex="C:\Users\hanaj\A.S.P\KERY\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_ab6516c305e8607db32a794a1e6aaa87e0b2d260\classes.dex" />
+        <dex dex="C:\Users\tnghk\App\KeryApp\app\build\intermediates\pre-dexed\debug\classes_ccd13602d0940db101b50bd18e59bd61e8edd1c4.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="C:\Users\hanaj\.android\build-cache\28bedfaaa2454a905794b5d84f1139370bb120bc\output\jars\classes.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="C:\Users\tnghk\.android\build-cache\e0ae00c2d9e00caf7ba5dccba0dd2ed704d06af6\output\jars\classes.jar"
+        jumboMode="false"
         optimize="true"
-        revision="25.0.0"
+        revision="26.0.1"
+        sha1="c4f45092eee6cdf1a5dbd597b2b6819be652ce2e">
+        <dex dex="C:\Users\tnghk\App\KeryApp\app\build\intermediates\pre-dexed\debug\classes_5f84cc52374341f65cf2323f1eae65776b069966.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\tnghk\.android\build-cache\55b91c9c4251eba42c8ed225267813dfeb30ca22\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="cddcd0fb93bc70e27325f2f715b2710332004ebb">
+        <dex dex="C:\Users\tnghk\App\KeryApp\app\build\intermediates\pre-dexed\debug\classes_5e7425d50d58f9382fe71c0a9c7403cd8345567e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\tnghk\.android\build-cache\80729b9d431877017e720e86f95a5dba6ca2bd46\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="88246166d5afb106f532f6e6deae683c66b42c89">
+        <dex dex="C:\Users\tnghk\App\KeryApp\app\build\intermediates\pre-dexed\debug\classes_8df3fcfb661378cc1b036b04c80b294ce31f0fbb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\tnghk\AppData\Local\Android\sdk1\extras\android\m2repository\com\android\support\support-annotations\26.0.0-alpha1\support-annotations-26.0.0-alpha1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="023ee503b631f69511e335a061ea008f8da60f40">
+        <dex dex="C:\Users\tnghk\App\KeryApp\app\build\intermediates\pre-dexed\debug\support-annotations-26.0.0-alpha1_d208ffa133e18a1a2c6cc91aec5e24ad234a9124.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\tnghk\.android\build-cache\4e22349482428c36a2fae79b3e7f1abc6d9d2e21\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="2e92aa0163544a804a0b34f169ca61801770839a">
+        <dex dex="C:\Users\tnghk\App\KeryApp\app\build\intermediates\pre-dexed\debug\classes_ec82a42ec41d6d58c6018ca0c41c7b7b7e88bc97.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\tnghk\.android\build-cache\fc8746c9b684ed3b57d14523ecec0dfa895608c0\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="8df0e365e40beb151bc42dee20817721a6cab7b0">
+        <dex dex="C:\Users\tnghk\App\KeryApp\app\build\intermediates\pre-dexed\debug\classes_cb0303bda7df3a9ac703961f240ec300717e012b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\tnghk\.android\build-cache\85c42db9d9f56a9846e1fe8f1c95d51f7dde9eb7\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
         sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="C:\Users\hanaj\A.S.P\KERY\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_07e2c98e114aa2d3b77538160b7b0b2a6f3bf3a0\classes.dex" />
+        <dex dex="C:\Users\tnghk\App\KeryApp\app\build\intermediates\pre-dexed\debug\classes_5e57b93175e58a89467cc9dba20b9ba5a63832d6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\tnghk\.android\build-cache\5c44c7b46fc2e33d7d3839c88cae814c0f555adc\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="16f844ac918f5b50050fd8f637fa1463e2099fb0">
+        <dex dex="C:\Users\tnghk\App\KeryApp\app\build\intermediates\pre-dexed\debug\classes_b1deb450c77f0578e4f4568ab4a50fce44ceccde.jar" />
     </item>
 
 </items>
