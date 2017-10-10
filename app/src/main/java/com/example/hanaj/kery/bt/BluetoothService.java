@@ -335,7 +335,22 @@ public class BluetoothService {
                                 System.arraycopy(buffer, 0, encodeBytes, 0, encodeBytes.length);
                                 String data = new String(encodeBytes,"US-ASCII");
 
-                                MainActivity.values = data;//값을 메인액티비티에 초기화
+                                int idx = data.indexOf("/");
+
+                                // @ 앞부분을 추출
+                                // substring은 첫번째 지정한 인덱스는 포함하지 않는다.
+                                // 아래의 경우는 첫번째 문자열인 a 부터 추출된다.
+                                String values = data.substring(0, idx);
+
+                                // 아래 substring은 @ 바로 뒷부분인 n부터 추출된다.
+                                String kinds = data.substring(idx + 1);
+                                if(kinds.equals("1"))//주행 관련 값 처리
+                                    MainActivity.driveValues = data;//값을 driveValues변수에 초기화
+                                else if(kinds.equals("4"))//무게 관련 값 처리
+                                    MainActivity.weight = data; //값을 weight변수에 초기화
+                                else if(kinds.equals("5"))//gps 관련 값 처리
+                                    MainActivity.gpsValues = data;// 값을 gps변수에 초기화
+
                                 readBufferPosition = 0;
                             }
                             else{
