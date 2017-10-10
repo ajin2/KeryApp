@@ -45,7 +45,9 @@ MainActivity extends AppCompatActivity implements BeaconConsumer{
 
     ImageView bt_status;
     //아두이노 받은 값을 받는 변수
-    public static String values="0,0";
+    public static String gpsValues="0,0";
+    public static String weight="0";
+    public static String driveValues="0,0";
     // synchronized flags
     private static final int STATE_SENDING = 1 ;
     private static final int STATE_NO_SENDING = 2 ;
@@ -96,7 +98,6 @@ MainActivity extends AppCompatActivity implements BeaconConsumer{
         mTab.getTabAt(1).setIcon(R.drawable.weight);
         mTab.getTabAt(2).setIcon(R.drawable.gps);
 
-
         // Set TabSelectedListener
         mTab.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
 
@@ -105,38 +106,34 @@ MainActivity extends AppCompatActivity implements BeaconConsumer{
 
                 if (tab.getPosition() == 2) {
                     sendMessage("5");
-                    Log.d("val2", MainActivity.values);
-                    if (values.equals("0,0")) {
+                    Log.d("val2", MainActivity.gpsValues);
+                    if (gpsValues.equals("0,0")) {
 
                     }
                     else {
-                        int idx = MainActivity.values.indexOf(",");
+                        int idx = MainActivity.gpsValues.indexOf(",");
 
                         // @ 앞부분을 추출
                         // substring은 첫번째 지정한 인덱스는 포함하지 않는다.
                         // 아래의 경우는 첫번째 문자열인 a 부터 추출된다.
-                        mLat = MainActivity.values.substring(0, idx);
+                        mLat = MainActivity.gpsValues.substring(0, idx);
 
                         //
                         // 아래 substring은 @ 바로 뒷부분인 n부터 추출된다.
-                        mLon = MainActivity.values.substring(idx + 1);
+                        mLon = MainActivity.gpsValues.substring(idx + 1);
                     }
 
                 }
                 else if (tab.getPosition() == 1)
                 {
-                    MainActivity.values="0";
+                    MainActivity.gpsValues="0,0";
                 }
 
             }
-
-
-
             @Override
             public void onTabUnselected(TabLayout.Tab tab) {
 
             }
-
             @Override
             public void onTabReselected(TabLayout.Tab tab) {
 
@@ -167,7 +164,7 @@ MainActivity extends AppCompatActivity implements BeaconConsumer{
     //비콘 탐색 시작
     public void startBeacon(){
         //0.5초에 한번씩 탐색
-        beaconManager.setForegroundScanPeriod(501l);
+        beaconManager.setForegroundScanPeriod(101l);
         beaconManager.setForegroundBetweenScanPeriod(0);
         beaconManager.bind(this);
     }
@@ -185,22 +182,22 @@ MainActivity extends AppCompatActivity implements BeaconConsumer{
                 for (Beacon beacon : beacons) {
                     //비콘 모듈의 이름이 일시적으로 바뀌지 않아 맥어드레스로 대체
                     String address = beacon.getBluetoothAddress();
-                    Double distance = beacon.getDistance();
+                    int rssi = (int)beacon.getRunningAverageRssi();
 
                     if (address.equals(beaconInfo.BEACON_LEFT_ADDRESS))
-                        beaconInfo.setLeft_distance((int) (distance * 1000));
+                        beaconInfo.setLeft_rssi(rssi);
                     else if (address.equals(beaconInfo.BEACON_CENTER_ADDRESS))
-                        beaconInfo.setCenter_distance((int) (distance * 1000));
+                        beaconInfo.setCenter_rssi(rssi);
                     else if (address.equals(beaconInfo.BEACON_RIGHT_ADDRESS))
-                        beaconInfo.setRight_distance((int) (distance * 1000));
+                        beaconInfo.setRight_rssi(rssi);
                     distanceCalculator.calculate();
+
                     sendMessage(distanceCalculator.getDirection());
 
                 }
-                //distanceCalculator.calculate();
-                //sendMessage(distanceCalculator.getDirection());
             }
         });
+
         try {
             beaconManager.startRangingBeaconsInRegion(new Region("MyRangingUniqueId",null,null,null));
         } catch (RemoteException e){ }
@@ -219,7 +216,6 @@ MainActivity extends AppCompatActivity implements BeaconConsumer{
         }
 
         mSendingState = STATE_SENDING;
-        Log.d("DRIVEAC", "state=>" + btService.getState());
         // Check that we're actually connected before trying anything
         if (btService.getState() != BluetoothService.STATE_CONNECTED) {
             mSendingState = STATE_NO_SENDING;
@@ -229,7 +225,6 @@ MainActivity extends AppCompatActivity implements BeaconConsumer{
         // Check that there's actually something to send
         if (message.length() > 0) {
             // Get the message bytes and tell the BluetoothChatService to write
-            Log.d("DRIVE", "send->" + message);
             byte[] send = message.getBytes();
             btService.write(send);
 

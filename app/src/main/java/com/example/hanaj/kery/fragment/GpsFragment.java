@@ -68,10 +68,11 @@ public class GpsFragment extends Fragment implements OnMapReadyCallback {
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
         // Add a marker in Sydney and move the camera
-        //mMap.clear();
+        mMap.clear();
 
 
         LatLng kery = new LatLng(Float.valueOf(MainActivity.mLat),Float.valueOf(MainActivity.mLon));
+//        LatLng kery = new LatLng(37.903755,127.03766);
         mMap.addMarker(new MarkerOptions().position(kery).title("My kery"));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(kery,18));
 
