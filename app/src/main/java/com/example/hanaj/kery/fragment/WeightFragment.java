@@ -53,8 +53,8 @@ public class WeightFragment extends Fragment {
             public void onClick(View v) {
 
                 ((MainActivity)getActivity()).sendMessage("4");
-                Log.d("abcde",MainActivity.values);
-                weight_value.setText(MainActivity.values);
+                Log.d("abcde",MainActivity.weight);
+                weight_value.setText(MainActivity.weight);
             }
         });
 
