@@ -1,30 +1,47 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.hanaj.kery.fragment.WeightFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.example.hanaj.kery.fragment.WeightFragment"
+    android:orientation="vertical"
+    android:background="#000000"
+    android:weightSum="3">
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:background="#000000"
-        android:weightSum="3"
+    <ImageView
+        android:id="@+id/imageView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="481dp"
+        android:layout_marginTop="20dp"
+        app:srcCompat="@drawable/weight0" />
 
-        <TextView
-            android:id="@+id/weight_value"
-            android:layout_marginTop="50dp"
-            android:layout_marginLeft="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="value"
-            android:textSize="40dp"
-            android:textColor="@color/white"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/weight_Btn"
-            android:text="수신"
-            android:textSize="20dp"/>
-    </LinearLayout>
+    <Button
+        android:id="@+id/weight_Btn"
+        android:layout_width="144dp"
+        android:layout_height="67dp"
+        android:background="@drawable/weight_button"
+        android:layout_marginLeft="110dp"
+        android:layout_marginTop="380dp"
+        android:text="Weight"
+        android:textColor="@color/white"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/weight_value"
+        android:layout_marginLeft="115dp"
+        android:layout_marginTop="200dp"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:textSize="90dp"
+        android:textColor="#676565"/>
+
+    <TextView
+        android:id="@+id/text_kg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="240dp"
+        android:layout_marginTop="270dp"
+        android:textSize="20dp"
+        android:text="Kg" />
 
 </FrameLayout>

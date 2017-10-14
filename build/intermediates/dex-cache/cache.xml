@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="D:\KeryApp\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="7152e2f91230791d41dffab48b4a61cf0a8fd4c7">
+        <dex dex="D:\KeryApp\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_dc44593471f918b62188b89c4912138ba93e3456\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\KeryApp\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="D:\KeryApp\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_0bc30cb327ba9ba7573979467d472fa52404fd9b\classes.dex" />
+    </item>
+
+</items>
