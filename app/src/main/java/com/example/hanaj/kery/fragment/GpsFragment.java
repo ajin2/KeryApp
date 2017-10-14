@@ -68,7 +68,7 @@ public class GpsFragment extends Fragment implements OnMapReadyCallback {
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
         // Add a marker in Sydney and move the camera
-        //mMap.clear();
+        mMap.clear();
 
 
         LatLng kery = new LatLng(Float.valueOf(MainActivity.mLat),Float.valueOf(MainActivity.mLon));

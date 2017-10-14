@@ -2,157 +2,22 @@
 <items version="2" >
 
     <item
-        is-multidex="false"
-        jar="C:\Users\tnghk\.android\build-cache\828e66ca03828e55f2cd0b3e3a6a4188994fdee8\output\jars\classes.jar"
-        jumboMode="false"
+        is-multidex="true"
+        jar="D:\KeryApp\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
         optimize="true"
         revision="26.0.1"
-        sha1="2430e711762a749feb00b3d64858ca4768251b9d">
-        <dex dex="C:\Users\tnghk\Documents\KeryApp\app\build\intermediates\pre-dexed\debug\classes_da915b1c3d762f8e2a269fc816b6265ccbece60f.jar" />
+        sha1="7152e2f91230791d41dffab48b4a61cf0a8fd4c7">
+        <dex dex="D:\KeryApp\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_dc44593471f918b62188b89c4912138ba93e3456\classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="C:\Users\tnghk\.android\build-cache\54b5941843dde896fd4cbe537cffcb84db7c1f07\output\jars\classes.jar"
-        jumboMode="false"
+        is-multidex="true"
+        jar="D:\KeryApp\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
         optimize="true"
         revision="26.0.1"
-        sha1="364364bf77b4a71afc5930fc3ae57b3f0eea637c">
-        <dex dex="C:\Users\tnghk\Documents\KeryApp\app\build\intermediates\pre-dexed\debug\classes_206954a139f086ebc53cf0eba3887e01f732e4b5.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\tnghk\.android\build-cache\f49ba2b974e149f6bfb002ec958ccf83537fd117\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.1"
-        sha1="70ffe00aaf049893f59d1dad57bd82992faa38ef">
-        <dex dex="C:\Users\tnghk\Documents\KeryApp\app\build\intermediates\pre-dexed\debug\classes_41212594ac0918103cf8266ef686ba8d6b2b50c6.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\tnghk\.android\build-cache\c6ed09c240b99055b12f00514a9168d9e292d627\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.1"
-        sha1="fcd01fd11233459f546c437ec927e9b61bf7caf1">
-        <dex dex="C:\Users\tnghk\App\KeryApp\app\build\intermediates\pre-dexed\debug\classes_cbec638c452b36e840f94aa7ef65ebdf4661bf4b.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\tnghk\.android\build-cache\d68945b907e5262af3cfc6d896f91961edc70e8a\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.1"
-        sha1="47471eb19df288158b00b8d9cfa41bce7373f5cc">
-        <dex dex="C:\Users\tnghk\App\KeryApp\app\build\intermediates\pre-dexed\debug\classes_66dd1cac856de75b353ff22f830ea226011066e3.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\tnghk\.android\build-cache\f5476bd8744867a7b2f1b36729963c269a246e88\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.1"
-        sha1="18d31838aa4fcc768a8a0516e22cc13b94655d89">
-        <dex dex="C:\Users\tnghk\App\KeryApp\app\build\intermediates\pre-dexed\debug\classes_c405d3a9cc3b105f97c7c19726efc9a61637e7d4.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\tnghk\.android\build-cache\66b129c381ab93f574b91f3eae7147d55dbf70e3\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.1"
-        sha1="6a022bf00ccd0948a8180c505e8e458bbddd43a6">
-        <dex dex="C:\Users\tnghk\App\KeryApp\app\build\intermediates\pre-dexed\debug\classes_0ce32f73a9a24c5e734cc60c8ee61555fc521df3.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\tnghk\.android\build-cache\537aa9b4cb659debe8f76d75dec9324d9035e181\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.1"
-        sha1="9935891f23923f39d002087085d9696568a9f657">
-        <dex dex="C:\Users\tnghk\App\KeryApp\app\build\intermediates\pre-dexed\debug\classes_ccd13602d0940db101b50bd18e59bd61e8edd1c4.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\tnghk\.android\build-cache\e0ae00c2d9e00caf7ba5dccba0dd2ed704d06af6\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.1"
-        sha1="c4f45092eee6cdf1a5dbd597b2b6819be652ce2e">
-        <dex dex="C:\Users\tnghk\App\KeryApp\app\build\intermediates\pre-dexed\debug\classes_5f84cc52374341f65cf2323f1eae65776b069966.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\tnghk\.android\build-cache\55b91c9c4251eba42c8ed225267813dfeb30ca22\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.1"
-        sha1="cddcd0fb93bc70e27325f2f715b2710332004ebb">
-        <dex dex="C:\Users\tnghk\App\KeryApp\app\build\intermediates\pre-dexed\debug\classes_5e7425d50d58f9382fe71c0a9c7403cd8345567e.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\tnghk\.android\build-cache\80729b9d431877017e720e86f95a5dba6ca2bd46\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.1"
-        sha1="88246166d5afb106f532f6e6deae683c66b42c89">
-        <dex dex="C:\Users\tnghk\App\KeryApp\app\build\intermediates\pre-dexed\debug\classes_8df3fcfb661378cc1b036b04c80b294ce31f0fbb.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\tnghk\AppData\Local\Android\sdk1\extras\android\m2repository\com\android\support\support-annotations\26.0.0-alpha1\support-annotations-26.0.0-alpha1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.1"
-        sha1="023ee503b631f69511e335a061ea008f8da60f40">
-        <dex dex="C:\Users\tnghk\App\KeryApp\app\build\intermediates\pre-dexed\debug\support-annotations-26.0.0-alpha1_d208ffa133e18a1a2c6cc91aec5e24ad234a9124.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\tnghk\.android\build-cache\01fbddba19a1e308bbbd8b0de56f8217ef91cdaa\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.1"
-        sha1="fcae52a60bc07924d370b4d376116cd8f8581f54">
-        <dex dex="C:\Users\tnghk\Documents\KeryApp\app\build\intermediates\pre-dexed\debug\classes_6f71162ce7751bbd7c7a591bf2fa7fb06cb39f38.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\tnghk\.android\build-cache\4e22349482428c36a2fae79b3e7f1abc6d9d2e21\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.1"
-        sha1="2e92aa0163544a804a0b34f169ca61801770839a">
-        <dex dex="C:\Users\tnghk\App\KeryApp\app\build\intermediates\pre-dexed\debug\classes_ec82a42ec41d6d58c6018ca0c41c7b7b7e88bc97.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\tnghk\.android\build-cache\fc8746c9b684ed3b57d14523ecec0dfa895608c0\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.1"
-        sha1="8df0e365e40beb151bc42dee20817721a6cab7b0">
-        <dex dex="C:\Users\tnghk\App\KeryApp\app\build\intermediates\pre-dexed\debug\classes_cb0303bda7df3a9ac703961f240ec300717e012b.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\tnghk\.android\build-cache\85c42db9d9f56a9846e1fe8f1c95d51f7dde9eb7\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.1"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="C:\Users\tnghk\App\KeryApp\app\build\intermediates\pre-dexed\debug\classes_5e57b93175e58a89467cc9dba20b9ba5a63832d6.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\tnghk\.android\build-cache\5c44c7b46fc2e33d7d3839c88cae814c0f555adc\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.1"
-        sha1="16f844ac918f5b50050fd8f637fa1463e2099fb0">
-        <dex dex="C:\Users\tnghk\App\KeryApp\app\build\intermediates\pre-dexed\debug\classes_b1deb450c77f0578e4f4568ab4a50fce44ceccde.jar" />
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="D:\KeryApp\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_0bc30cb327ba9ba7573979467d472fa52404fd9b\classes.dex" />
     </item>
 
 </items>
