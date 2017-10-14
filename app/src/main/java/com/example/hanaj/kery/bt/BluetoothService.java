@@ -343,14 +343,19 @@ public class BluetoothService {
                                 String values = data.substring(0, idx);
 
                                 // 아래 substring은 @ 바로 뒷부분인 n부터 추출된다.
-                                String kinds = data.substring(idx + 1);
-                                if(kinds.equals("1"))//주행 관련 값 처리
-                                    MainActivity.driveValues = data;//값을 driveValues변수에 초기화
-                                else if(kinds.equals("4"))//무게 관련 값 처리
-                                    MainActivity.weight = data; //값을 weight변수에 초기화
-                                else if(kinds.equals("5"))//gps 관련 값 처리
-                                    MainActivity.gpsValues = data;// 값을 gps변수에 초기화
-
+                                String kinds = data.substring(idx + 1,idx +2);
+                                int kind = Integer.parseInt(kinds);
+                                switch(kind){
+                                    case 1:
+                                        MainActivity.driveValues = values;//값을 driveValues변수에 초기화
+                                        break;
+                                    case 4:
+                                        MainActivity.weight = values; //값을 weight변수에 초기화
+                                        break;
+                                    case 5:
+                                        MainActivity.gpsValues = values;// 값을 gps변수에 초기화
+                                        break;
+                                }
                                 readBufferPosition = 0;
                             }
                             else{

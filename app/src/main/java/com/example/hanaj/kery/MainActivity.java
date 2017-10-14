@@ -146,7 +146,6 @@ MainActivity extends AppCompatActivity implements BeaconConsumer{
         if(btService == null) {
             btService = new BluetoothService(this,mHandler);
             mOutStringBuffer= new StringBuffer("");
-            Log.d("btservicestate", "state->" + btService.getState());
         }
 
         //비콘매니저 객체를 초기화
@@ -156,16 +155,12 @@ MainActivity extends AppCompatActivity implements BeaconConsumer{
 
         //기기에 따라 setBeaconLayout안의 내용을 바꿔줘야 하는듯 함.
         beaconManager.getBeaconParsers().add(new BeaconParser().setBeaconLayout("m:2-3=0215,i:4-19,i:20-21,i:22-23,p:24-24,d:25-25"));
-        //비콘 탐지 시작 및 아두이노에 신호 송신
-
-        sendMessage("5");
 
     }
     //비콘 탐색 시작
     public void startBeacon(){
         //0.5초에 한번씩 탐색
-        beaconManager.setForegroundScanPeriod(101l);
-        beaconManager.setForegroundBetweenScanPeriod(0);
+        beaconManager.setForegroundScanPeriod(501l);
         beaconManager.bind(this);
     }
     //비콘 탐색 종료
@@ -182,16 +177,15 @@ MainActivity extends AppCompatActivity implements BeaconConsumer{
                 for (Beacon beacon : beacons) {
                     //비콘 모듈의 이름이 일시적으로 바뀌지 않아 맥어드레스로 대체
                     String address = beacon.getBluetoothAddress();
-                    int rssi = (int)beacon.getRunningAverageRssi();
-
+                    double distance = beacon.getDistance();
                     if (address.equals(beaconInfo.BEACON_LEFT_ADDRESS))
-                        beaconInfo.setLeft_rssi(rssi);
+                        beaconInfo.setLeft_distance(distance);
                     else if (address.equals(beaconInfo.BEACON_CENTER_ADDRESS))
-                        beaconInfo.setCenter_rssi(rssi);
+                        beaconInfo.setCenter_distance(distance);
                     else if (address.equals(beaconInfo.BEACON_RIGHT_ADDRESS))
-                        beaconInfo.setRight_rssi(rssi);
+                        beaconInfo.setRight_distance(distance);
                     distanceCalculator.calculate();
-
+                    Log.d("distance","left-->>"+beaconInfo.getLeft_distance()*100+" Center-->"+beaconInfo.getCenter_distance()*100+" right-->"+beaconInfo.getRight_distance()+100);
                     sendMessage(distanceCalculator.getDirection());
 
                 }
