@@ -336,7 +336,7 @@ public class BluetoothService {
                                 String data = new String(encodeBytes,"US-ASCII");
 
                                 int idx = data.indexOf("/");
-
+                                Log.d("druvevakues","-->"+data);
                                 // @ 앞부분을 추출
                                 // substring은 첫번째 지정한 인덱스는 포함하지 않는다.
                                 // 아래의 경우는 첫번째 문자열인 a 부터 추출된다.
@@ -347,6 +347,7 @@ public class BluetoothService {
                                 int kind = Integer.parseInt(kinds);
                                 switch(kind){
                                     case 1:
+
                                         MainActivity.driveValues = values;//값을 driveValues변수에 초기화
                                         break;
                                     case 4:

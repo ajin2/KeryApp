@@ -11,6 +11,10 @@ public class BeaconInfo {
     private static double left_distance;
     private static double center_distance;
     private static double right_distance;
+    //rssi
+    private static double left_rssi;
+    private static double center_rssi;
+    private static double right_rssi;
 
     public String getBEACON_LEFT_ADDRESS() {
         return BEACON_LEFT_ADDRESS;
@@ -44,6 +48,30 @@ public class BeaconInfo {
 
     public static void setRight_distance(double right_distance) {
         BeaconInfo.right_distance = right_distance;
+    }
+
+    public static double getLeft_rssi() {
+        return left_rssi;
+    }
+
+    public static void setLeft_rssi(double left_rssi) {
+        BeaconInfo.left_rssi = left_rssi;
+    }
+
+    public static double getCenter_rssi() {
+        return center_rssi;
+    }
+
+    public static void setCenter_rssi(double center_rssi) {
+        BeaconInfo.center_rssi = center_rssi;
+    }
+
+    public static double getRight_rssi() {
+        return right_rssi;
+    }
+
+    public static void setRight_rssi(double right_rssi) {
+        BeaconInfo.right_rssi = right_rssi;
     }
 }
 

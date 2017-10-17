@@ -159,8 +159,11 @@ MainActivity extends AppCompatActivity implements BeaconConsumer{
     }
     //비콘 탐색 시작
     public void startBeacon(){
-        //0.5초에 한번씩 탐색
-        beaconManager.setForegroundScanPeriod(501l);
+        //0.1초에 한번씩 탐색
+        beaconManager.setBackgroundScanPeriod(100l);
+        beaconManager.setBackgroundBetweenScanPeriod(10l);
+        beaconManager.setForegroundScanPeriod(100l);
+        beaconManager.setForegroundBetweenScanPeriod(10l);
         beaconManager.bind(this);
     }
     //비콘 탐색 종료
@@ -178,14 +181,16 @@ MainActivity extends AppCompatActivity implements BeaconConsumer{
                     //비콘 모듈의 이름이 일시적으로 바뀌지 않아 맥어드레스로 대체
                     String address = beacon.getBluetoothAddress();
                     double distance = beacon.getDistance();
+                    double rssi = beacon.getRssi();
+                    double runningAverageRssi = beacon.getRunningAverageRssi();
                     if (address.equals(beaconInfo.BEACON_LEFT_ADDRESS))
-                        beaconInfo.setLeft_distance(distance);
+                        beaconInfo.setLeft_rssi(rssi);
                     else if (address.equals(beaconInfo.BEACON_CENTER_ADDRESS))
-                        beaconInfo.setCenter_distance(distance);
+                        //beaconInfo.setCenter_distance(distance);
+                        beaconInfo.setCenter_rssi(rssi);
                     else if (address.equals(beaconInfo.BEACON_RIGHT_ADDRESS))
-                        beaconInfo.setRight_distance(distance);
+                        beaconInfo.setRight_rssi(rssi);
                     distanceCalculator.calculate();
-                    Log.d("distance","left-->>"+beaconInfo.getLeft_distance()*100+" Center-->"+beaconInfo.getCenter_distance()*100+" right-->"+beaconInfo.getRight_distance()+100);
                     sendMessage(distanceCalculator.getDirection());
 
                 }

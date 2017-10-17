@@ -19,6 +19,7 @@ public class Kalman{
     // 현재값을받아계산된공식을적용하고반환한다
     public double update(double measurement){
         measurementUpdate();
-        X = X + (measurement - X) * K;return X;
+        X = X + (measurement - X) * K;
+        return X;
     }
 }
